@@ -59,31 +59,27 @@ begin
             if Direction = '1' then nextState <= s2;
             else nextState <= s32;
             end if;
-     case presentState is 
         when s2 => Count <= "000010";
             if Direction = '1' then nextState <= s4;
             else nextState <= s1;
             end if;
-      case presentState is 
         when s4 => Count <= "000100";
             if Direction = '1' then nextState <= s8;
             else nextState <= s4;
             end if;
-      case presentState is 
         when s8 => Count <= "001000";
             if Direction = '1' then nextState <= s16;
             else nextState <= s4;
             end if;
-      case presentState is 
         when s16 => Count <= "010000";
             if Direction = '1' then nextState <= s32;
             else nextState <= s8;
             end if;
-       case presentState is 
         when s32 => Count <= "100000";
             if Direction = '1' then nextState <= s16;
             else nextState <= s1;
             end if;
     end case;
 end process;
+
 end Behavioral;
