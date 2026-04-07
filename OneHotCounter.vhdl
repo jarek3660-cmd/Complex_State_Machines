@@ -76,8 +76,8 @@ begin
             else nextState <= s8;
             end if;
         when s32 => Count <= "100000";
-            if Direction = '1' then nextState <= s16;
-            else nextState <= s1;
+            if Direction = '1' then nextState <= s1;
+            else nextState <= s16;
             end if;
     end case;
 end process;
