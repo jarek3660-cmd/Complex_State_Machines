@@ -71,7 +71,7 @@ begin
          
         when s9 => Cathode_7SD <= "00001001";
              if Direction = '0' then nextState <= s8;
-                else nextState <= s1;
+                else nextState <= s0;
             end if;
         when s8 => Cathode_7SD <= "00000001";
             nextState <= s7;
