@@ -58,15 +58,17 @@ begin
     case presentState is
         when s0 => Cathode_7SD <= "0000011";
            if Reset = '1' then nextState <= s0;
-                if Direction = '1' then nextState <= s2;
+                if Direction = '1' then nextState <= s1;
                 else nextState <= s9;
                 end if;
            end if;
-        when s2 => Cathode_7SD <= "1001111";
+        when s1 => Cathode_7SD <= "1001111";
+            nextState <= s2;   
+        when s2 => Cathode_7SD <= "01100101";
             nextState <= s3;
-        when s3 => Cathode_7SD <= "00100011";
+        when s3 => Cathode_7SD <= "00001101";
             nextState <= s4;
-        when s4 => Cathode_7SD <= "00001101";
+        when s4 => Cathode_7SD <= "10011001";
             nextState <= s0;
          
         when s9 => Cathode_7SD <= "00011001";
