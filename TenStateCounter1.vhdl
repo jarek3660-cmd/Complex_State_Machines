@@ -56,22 +56,22 @@ syncProcess : process (Clk_Sys, Reset)
     combinatoralProcess : process (presentState, Direction)
 begin
     case presentState is
-        when s0 => Cathode_7SD <= "0000011";
+        when s0 => Cathode_7SD <= "00000011";
            if Reset = '1' then nextState <= s0;
                 if Direction = '1' then nextState <= s1;
                 else nextState <= s9;
                 end if;
            end if;
-        when s1 => Cathode_7SD <= "1001111";
+        when s1 => Cathode_7SD <= "10011111";
             nextState <= s2;   
-        when s2 => Cathode_7SD <= "01100101";
+        when s2 => Cathode_7SD <= "00100101";
             nextState <= s3;
         when s3 => Cathode_7SD <= "00001101";
             nextState <= s4;
         when s4 => Cathode_7SD <= "10011001";
             nextState <= s0;
          
-        when s9 => Cathode_7SD <= "00011001";
+        when s9 => Cathode_7SD <= "00001001";
         if Reset = '1' then nextState <= s0;
             else if Direction = '0' then nextState <= s8;
                 else nextState <= s1;
