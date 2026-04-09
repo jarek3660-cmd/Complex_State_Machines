@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity TenStateCounter is
     Port ( Clk_Sys, Reset, Direction : in STD_LOGIC;
-           Cathode_7SD, Anode_7SD : out STD_LOGIC_VECTOR (7 downto 0));
+           Count : out STD_LOGIC_VECTOR (3 downto 0));
 end TenStateCounter;
 
 architecture Behavioral of TenStateCounter is
