@@ -57,11 +57,9 @@ syncProcess : process (Clk_Sys, Reset)
 begin
     case presentState is
         when s0 => Cathode_7SD <= "00000011";
-           if Reset = '1' then nextState <= s0;
-                else if Direction = '1' then nextState <= s1;
+                 if Direction = '1' then nextState <= s1;
                 else nextState <= s9;
                 end if;
-           end if;
         when s1 => Cathode_7SD <= "10011111";
             nextState <= s2;   
         when s2 => Cathode_7SD <= "00100101";
@@ -72,11 +70,9 @@ begin
             nextState <= s0;
          
         when s9 => Cathode_7SD <= "00001001";
-        if Reset = '1' then nextState <= s0;
-            else if Direction = '0' then nextState <= s8;
+             if Direction = '0' then nextState <= s8;
                 else nextState <= s1;
             end if;
-        end if;    
         when s8 => Cathode_7SD <= "00000001";
             nextState <= s7;
         when s7 => Cathode_7SD <= "00011111";
