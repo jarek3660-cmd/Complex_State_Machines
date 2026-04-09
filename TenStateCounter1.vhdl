@@ -58,7 +58,7 @@ begin
     case presentState is
         when s0 => Cathode_7SD <= "00000011";
            if Reset = '1' then nextState <= s0;
-                if Direction = '1' then nextState <= s1;
+                else if Direction = '1' then nextState <= s1;
                 else nextState <= s9;
                 end if;
            end if;
