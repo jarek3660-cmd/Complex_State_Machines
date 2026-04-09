@@ -65,7 +65,7 @@ begin
             end if;
         when s4 => Count <= "000100";
             if Direction = '1' then nextState <= s8;
-            else nextState <= s4;
+            else nextState <= s2;
             end if;
         when s8 => Count <= "001000";
             if Direction = '1' then nextState <= s16;
